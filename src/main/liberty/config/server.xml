@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+    <featureManager>
+        <feature>jakartaee-10.0</feature>
+        <feature>microProfile-6.1</feature>
+    </featureManager>
+    <basicRegistry id="basic" realm="BasicRealm">
+        <user name="user" password="password" />
+        <group name="ROLE">
+            <member name="user"/>
+        </group>
+    </basicRegistry>
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="9080"
+                  httpsPort="9443" />
+    <applicationManager autoExpand="true"/>
+    <webApplication contextRoot="/app-name" location="app-name.war" />
+    <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+</server>
